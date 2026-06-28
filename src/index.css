@@ -1,0 +1,58 @@
+:root {
+  color-scheme: light;
+  --bg: #f3fbe8;
+  --surface: rgba(255, 255, 255, 0.88);
+  --border: rgba(112, 148, 99, 0.22);
+  --text: #243a24;
+  --muted: #678065;
+  --accent: #7fb96d;
+  --accent-2: #63c47a;
+  --danger: #d9757a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f8ffed 0%, #e9f8de 55%, #f3fbe8 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root { min-height: 100vh; }
+
+.app-shell { max-width: 1100px; margin: 0 auto; padding: 32px 20px 48px; }
+.hero-card, .panel, .summary-card { background: var(--surface); border: 1px solid var(--border); box-shadow: 0 16px 30px rgba(99, 122, 85, 0.14); backdrop-filter: blur(12px); }
+.hero-card { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; border-radius: 24px; margin-bottom: 20px; }
+.eyebrow { margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-2); font-size: 0.75rem; font-weight: 700; }
+h1, h2, p { margin: 0; }
+.subtitle { margin-top: 8px; color: var(--muted); max-width: 600px; }
+.hero-badge { padding: 10px 14px; border-radius: 999px; background: rgba(127, 185, 109, 0.18); color: #4d6b41; font-weight: 600; white-space: nowrap; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 20px; }
+.summary-card { border-radius: 20px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+.summary-card span { color: var(--muted); font-size: 0.95rem; }
+.summary-card strong { font-size: 1.6rem; }
+.accent-purple { background: linear-gradient(135deg, rgba(183, 218, 171, 0.5), rgba(127, 185, 109, 0.16)); }
+.accent-blue { background: linear-gradient(135deg, rgba(180, 219, 186, 0.42), rgba(99, 196, 122, 0.16)); }
+.accent-green { background: linear-gradient(135deg, rgba(204, 234, 192, 0.5), rgba(127, 185, 109, 0.16)); }
+.content-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
+.panel { border-radius: 24px; padding: 22px; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.budget-control { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 0.9rem; }
+.budget-control input, .expense-form input, .expense-form select, .expense-form button { border-radius: 12px; border: 1px solid var(--border); padding: 10px 12px; font: inherit; }
+.budget-control input, .expense-form input, .expense-form select { background: rgba(255,255,255,0.86); color: var(--text); }
+.expense-form { display: grid; gap: 12px; }
+.expense-form label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); }
+.expense-form button { margin-top: 4px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; cursor: pointer; font-weight: 600; }
+.expense-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.expense-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 16px; background: rgba(240, 247, 230, 0.82); border: 1px solid rgba(127, 185, 109, 0.16); }
+.expense-meta { display: flex; flex-direction: column; gap: 4px; }
+.expense-meta strong { font-size: 1rem; }
+.expense-meta span { color: var(--muted); font-size: 0.9rem; }
+.expense-actions { display: flex; align-items: center; gap: 12px; }
+.expense-amount { font-weight: 700; color: #4d6b41; }
+.delete-btn { border: none; border-radius: 999px; padding: 8px 10px; cursor: pointer; background: rgba(217, 117, 122, 0.16); color: #8f4d52; }
+.empty-state { text-align: center; color: var(--muted); padding: 20px 10px; border: 1px dashed var(--border); border-radius: 16px; }
+@media (max-width: 840px) { .content-grid, .summary-grid { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .hero-card, .panel { padding: 18px; } .panel-heading, .hero-card { flex-direction: column; align-items: flex-start; } .expense-item { flex-direction: column; align-items: flex-start; } }
